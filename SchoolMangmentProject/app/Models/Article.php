@@ -13,7 +13,8 @@ class Article extends Model
         'title',
         'media',
         'is_img',
-        'sender'
+        'sender',
+        'user_id'
     ];
 
     public function user()
@@ -23,5 +24,5 @@ class Article extends Model
 
 
 
-    
+
 }

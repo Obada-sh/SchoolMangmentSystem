@@ -10,6 +10,12 @@ class Mark extends Model
     use HasFactory;
     protected $fillable=[
         'sub_name',
-        'mark'
+        'mark',
+        'student_id'
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

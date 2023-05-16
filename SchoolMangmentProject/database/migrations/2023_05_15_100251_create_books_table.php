@@ -17,6 +17,7 @@ return new class extends Migration
             $table->boolean('is_available');
             $table->date('available_date');
             $table->string('img');
+            $table->foreignId(column:'student_id')->references('user_id')->on('students')->onDelete('cascade');
             $table->timestamps();
         });
     }

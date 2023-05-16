@@ -12,6 +12,12 @@ class Book extends Model
         'name',
         'is_available',
         'available_date',
-        'img'
+        'img',
+        'student_id'
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(Student::class);
+    }
 }

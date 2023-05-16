@@ -15,4 +15,8 @@ class ChildParent extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function strudent()
+    {
+        return $this->hasMany(Student::class);
+    }
 }
