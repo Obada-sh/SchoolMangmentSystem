@@ -9,6 +9,18 @@ class ProgramDay extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'day'
+        'day',
+        'section_id',
+        'section_id'
     ];
+
+    public function hessa()
+    {
+        return $this->hasMany(Hessa::class);
+    }
+
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
+    }
 }

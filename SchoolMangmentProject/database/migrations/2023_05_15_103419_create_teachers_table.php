@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('salary');
             $table->foreignId(column:'user_id')->constrained();
+            $table->foreignId(column:'subject_id')->constrained();
             $table->timestamps();
         });
     }

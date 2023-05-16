@@ -9,11 +9,23 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'salary'
+        'salary',
+        'subject_id'
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
+
+    public function hessa()
+    {
+        return $this->hasMany(Hessa::class);
+    }
+
+    public function subject()
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
 }

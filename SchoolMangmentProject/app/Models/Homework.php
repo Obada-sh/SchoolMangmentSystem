@@ -13,4 +13,9 @@ class Homework extends Model
         'subject',
         'body'
     ];
+
+    public function section()
+    {
+        return $this->belongsTo (Section::class);
+    }
 }

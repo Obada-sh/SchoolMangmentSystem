@@ -13,7 +13,8 @@ class Student extends Model
         'left_for_bus',
         'left_for_qusat',
         'user_id',
-        'parent_id'
+        'parent_id',
+        'section_id'
     ];
 
     public function user()
@@ -34,6 +35,10 @@ class Student extends Model
     public function book()
     {
         return $this->hasMany(Book::class);
+    }
+    public function section()
+    {
+        return $this->belongsTo(Section::class);
     }
 
 

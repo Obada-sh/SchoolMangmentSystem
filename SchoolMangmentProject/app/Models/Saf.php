@@ -11,4 +11,14 @@ class Saf extends Model
     protected $fillable=[
         'grade'
     ];
+
+    public function subject()
+    {
+        return $this->hasMany(Subject::class);
+    }
+
+    public function section()
+    {
+        return $this->hasMany(Section::class);
+    }
 }

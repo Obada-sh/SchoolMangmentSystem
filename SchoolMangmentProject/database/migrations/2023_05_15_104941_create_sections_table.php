@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('number');
             $table->string('exam_image');
+            $table->foreignId(column:'saf_id')->constrained();
             $table->timestamps();
         });
     }
