@@ -10,7 +10,8 @@ class Teacher extends Model
     use HasFactory;
     protected $fillable=[
         'salary',
-        'subject_id'
+        'subject_id',
+        'user_id'
     ];
 
     public function user()

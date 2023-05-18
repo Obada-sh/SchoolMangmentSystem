@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('media');
             $table->boolean('is_img');
-            $table->string('sender');
             $table->foreignId(column:'user_id')->constrained();
             $table->timestamps();
         });

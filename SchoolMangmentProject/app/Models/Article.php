@@ -13,7 +13,6 @@ class Article extends Model
         'title',
         'media',
         'is_img',
-        'sender',
         'user_id'
     ];
 

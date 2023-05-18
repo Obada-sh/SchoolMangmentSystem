@@ -11,7 +11,8 @@ class Homework extends Model
     protected $fillable=[
         'teacher_name',
         'subject',
-        'body'
+        'body',
+        'section_id'
     ];
 
     public function section()

@@ -10,7 +10,6 @@ class ProgramDay extends Model
     use HasFactory;
     protected $fillable=[
         'day',
-        'section_id',
         'section_id'
     ];
 

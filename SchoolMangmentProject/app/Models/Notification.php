@@ -11,7 +11,8 @@ class Notification extends Model
     protected $fillable=[
         'title',
         'sender',
-        'body'
+        'body',
+        'user_id'
     ];
 
     public function user()
