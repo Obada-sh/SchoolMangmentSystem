@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('absences', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->foreignId(column:'student_id')->references('user_id')->on('student')->onDelete('cascade');
+            $table->foreignId(column:'student_id')->references('user_id')->on('students')->onDelete('cascade');
             $table->timestamps();
         });
     }

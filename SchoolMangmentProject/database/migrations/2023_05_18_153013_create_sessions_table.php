@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('price');
             $table->text('body');
             $table->integer('counter');
-            $table->foreignId(column:'teacher_id')->references('user_id')->on('teacher')->onDelete('cascade');
+            $table->foreignId(column:'teacher_id')->references('user_id')->on('teachers')->onDelete('cascade');
             $table->timestamps();
         });
     }

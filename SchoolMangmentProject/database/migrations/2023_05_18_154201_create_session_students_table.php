@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('session_students', function (Blueprint $table) {
             $table->id();
             $table->string('status');
-            $table->foreignId(column:'student_id')->references('user_id')->on('student')->onDelete('cascade');
+            $table->foreignId(column:'student_id')->references('user_id')->on('students')->onDelete('cascade');
             $table->foreignId(column:'session_id')->constrained();
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('hessas', function (Blueprint $table) {
             $table->id();
             $table->integer('time');
-            $table->foreignId(column:'teacher_id')->references('user_id')->on('teacher')->onDelete('cascade');
+            $table->foreignId(column:'teacher_id')->references('user_id')->on('teachers')->onDelete('cascade');
             $table->foreignId(column:'program_day_id')->constrained();
             $table->timestamps();
         });

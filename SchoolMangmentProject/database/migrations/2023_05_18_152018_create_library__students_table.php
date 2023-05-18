@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('book_date');
             $table->date('return_date');
-            $table->foreignId(column:'student_id')->references('user_id')->on('student')->onDelete('cascade');
+            $table->foreignId(column:'student_id')->references('user_id')->on('students')->onDelete('cascade');
             $table->foreignId(column:'library_id')->constrained();
             $table->timestamps();
         });
