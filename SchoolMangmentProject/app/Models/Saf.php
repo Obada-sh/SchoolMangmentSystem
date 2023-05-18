@@ -21,4 +21,8 @@ class Saf extends Model
     {
         return $this->hasMany(Section::class);
     }
+    public function session()
+    {
+        return $this->hasMany(Session::class);
+    }
 }

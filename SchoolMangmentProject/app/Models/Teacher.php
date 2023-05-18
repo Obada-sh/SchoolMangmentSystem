@@ -28,5 +28,9 @@ class Teacher extends Model
     {
         return $this->belongsTo(Subject::class);
     }
+    public function session()
+    {
+        return $this->hasMany(Session::class);
+    }
 
 }

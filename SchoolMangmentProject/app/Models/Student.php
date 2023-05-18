@@ -32,15 +32,23 @@ class Student extends Model
         return $this->hasMany(Mark::class);
     }
 
-    public function book()
-    {
-        return $this->hasMany(Book::class);
-    }
     public function section()
     {
         return $this->belongsTo(Section::class);
     }
 
+    public function absence()
+    {
+        return $this->hasMany(Absence::class);
+    }
 
+    public function library_student()
+    {
+        return $this->hasMany(Library_Student::class);
+    }
 
+    public function Session_student()
+    {
+        return $this->hasMany(Session_student::class);
+    }
 }
