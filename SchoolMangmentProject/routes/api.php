@@ -5,6 +5,7 @@ use App\Http\Controllers\SectionController;
 use App\Http\Controllers\SubjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::post('/registerStudent' , [RegisterController::class,'registerStudent']);
+
 
 Route::middleware('adminAccess')->group(function(){
     Route::post('/createClass',[ClassController::class,'createClass']);
     Route::post('/createSection',[SectionController::class,'createSection']);
     Route::post('/createSubject',[SubjectController::class,'createSubject']);
-    
+
 });
 
 
