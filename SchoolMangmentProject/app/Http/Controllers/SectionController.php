@@ -6,7 +6,7 @@ use App\Http\Requests\CreateSectionRequest;
 use App\Solid\createSection\createSection;
 use Illuminate\Http\Request;
 
-class CreateSectionController extends Controller
+class SectionController extends Controller
 {
     public function createSection(CreateSectionRequest $Request)
     {

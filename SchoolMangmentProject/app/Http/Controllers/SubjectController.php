@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateSubjectRequest;
 use App\Solid\createSubject\createSubject;
+use App\Solid\createSubject\readSubject;
 
 class SubjectController extends Controller
 {
@@ -15,5 +16,15 @@ class SubjectController extends Controller
             'status' => true
         ]);
 
+    }
+
+    public function readSubject()
+    {
+        $subjects = readSubject::read();
+
+        return response()->json([
+            'status' => true,
+            'data' => $subjects
+        ]);
     }
 }

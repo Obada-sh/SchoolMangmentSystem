@@ -35,3 +35,4 @@ Route::middleware('adminAccess')->group(function(){
 
 
 
+Route::get('/readSubjects',[SubjectController::class,'readSubject']);
