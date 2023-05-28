@@ -20,13 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-<<<<<<< HEAD
+Route::post('/registerParent' , [RegisterController::class,'registerParent']);
 Route::post('/registerStudent' , [RegisterController::class,'registerStudent']);
-=======
-
 
 Route::middleware('adminAccess')->group(function(){
 });
 
 Route::post('/createClass',[createClassController::class,'createClass']);
->>>>>>> e795856a23a27a9ca2c42fdc693cd64193f4f619
