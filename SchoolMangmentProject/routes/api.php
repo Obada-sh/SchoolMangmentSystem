@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\createClassController;
+use App\Http\Controllers\ClassController;
+use App\Http\Controllers\SectionController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::middleware('adminAccess')->group(function(){
+    Route::post('/createClass',[ClassController::class,'createClass']);
+    Route::post('/createSection',[SectionController::class,'createSection']);
+    Route::post('/createSubject',[SubjectController::class,'createSubject']);
+    
 });
 
-Route::post('/createClass',[createClassController::class,'createClass']);
+
+
