@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->integer('number');
-            $table->string('exam_image');
+            $table->string('exam_image')->nullable();
             $table->foreignId(column:'saf_id')->constrained();
             $table->timestamps();
         });
