@@ -10,14 +10,14 @@ class CreateUserInfo implements CreateUser
     public static  function createUser($data)
     {
         $input = $data->all();
-        if($data->hasFile('img'))
+        if($data->hasFile('img'))   n
         {
             $filenameToStore = time().'.'.$data->img->extension();
             $data->img->move(public_path('images'),$filenameToStore);
             $input['imgUrl'] = URL::asset('images/'.$filenameToStore);
         }
         $user=User::create([
-               // 'img' => $input['imgUrl'],
+                'img' => $input['imgUrl'],
                 'name'=>$data['name'],
                 'email'=>$data['email'],
                 'password'=>bcrypt($data['password']),

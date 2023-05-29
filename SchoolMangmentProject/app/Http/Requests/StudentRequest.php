@@ -22,7 +22,7 @@ class StudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'img'=>'image',
+                'img'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
                 'name'=>'required|string',
                 'email'=>'required|string|unique:users,email',
                 'password'=>'required|string|min:6',

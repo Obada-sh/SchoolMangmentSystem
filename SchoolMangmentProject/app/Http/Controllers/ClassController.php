@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\createClassRequest;
+use App\Http\Requests\CreateClassRequest;
 use App\Solid\createClass\createClass;
 use Illuminate\Http\Request;
 
 class ClassController extends Controller
 {
-    public function createClass(createClassRequest $request)
+    public function createClass(CreateClassRequest $request)
     {
         createClass::create($request);
 
