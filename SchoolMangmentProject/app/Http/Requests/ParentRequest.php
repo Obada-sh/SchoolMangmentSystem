@@ -21,13 +21,13 @@ class ParentRequest extends FormRequest
      */
     public function rules(): array
     {
-            return [
-                'img'=>'image|mimes:jpeg,png,jpg,gif|max:2048',
-                'name'=>'required|string',
-                'email'=>'required|string|unique:users,email',
-                'password'=>'required|string|min:6',
-                'role'=>'required|in:Admin,Student,Teacher,Parent',
-                'gender'=>'required|in:Male,Femal',
+        return [
+            'img' => 'bail|image|mimes:jpeg,png,jpg,gif',
+            'name' => 'bail|required|string',
+            'email' => 'bail|required|string|unique:users,email',
+            'password' => 'bail|required|string|min:6',
+            'role' => 'bail|required|in:Admin,Student,Teacher,Parent',
+            'gender' => 'bail|required|in:Male,Female',
         ];
 
     }

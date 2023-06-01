@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/registerParent' , [RegisterController::class,'registerParent']);
 Route::post('/registerStudent' , [RegisterController::class,'registerStudent']);
 
-Route::post('/registerStudent' , [RegisterController::class,'registerStudent']);
+
 
 
 Route::middleware('adminAccess')->group(function(){

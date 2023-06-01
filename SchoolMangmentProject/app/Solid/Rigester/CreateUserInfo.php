@@ -3,6 +3,7 @@
 namespace App\Solid\Rigester;
 
 use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\URL;
 
 class CreateUserInfo implements CreateUser
@@ -10,14 +11,16 @@ class CreateUserInfo implements CreateUser
     public static  function createUser($data)
     {
         $input = $data->all();
-        if($data->hasFile('img'))   n
+        if($data->hasFile('img'))
         {
             $filenameToStore = time().'.'.$data->img->extension();
             $data->img->move(public_path('images'),$filenameToStore);
-            $input['imgUrl'] = URL::asset('images/'.$filenameToStore);
+            $input['img'] = URL::asset('images/'.$filenameToStore);
+        } else {
+            $input['img'] = null;
         }
         $user=User::create([
-                'img' => $input['imgUrl'],
+                'img' => $input['img'],
                 'name'=>$data['name'],
                 'email'=>$data['email'],
                 'password'=>bcrypt($data['password']),

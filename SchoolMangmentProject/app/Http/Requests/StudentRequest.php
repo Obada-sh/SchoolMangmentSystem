@@ -22,17 +22,18 @@ class StudentRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'img'=>'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-                'name'=>'required|string',
-                'email'=>'required|string|unique:users,email',
-                'password'=>'required|string|min:6',
-                'role'=>'required|in:Admin,Student,Teacher,Parent',
-                'gender'=>'required|in:Male,Femal',
-                'is_in_bus'=>'required|boolean',
-                'left_for_bus'=>'required|integer',
-                'left_for_qusat'=>'required|integer',
-                'parent_id'=>'required|integer',
-                'section_id'=>'required|integer'
+            'img' => 'bail|image|mimes:jpeg,png,jpg,gif',
+            'name' => 'bail|required|string',
+            'email' => 'bail|required|string|unique:users,email',
+            'password' => 'bail|required|string|min:6',
+            'role' => 'bail|required|in:Admin,Student,Teacher,Parent',
+            'gender' => 'bail|required|in:Male,Female',
+            'is_in_bus' => 'bail|required|boolean',
+            'left_for_bus' => 'bail|required|integer',
+            'left_for_qusat' => 'bail|required|integer',
+            'parent_id' => 'bail|required|integer',
+            'section_id' => 'bail|required|integer',
         ];
+
     }
 }
