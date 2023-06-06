@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Solid\Rigester;
+namespace App\Solid\Register;
 
 
 interface CreateUser

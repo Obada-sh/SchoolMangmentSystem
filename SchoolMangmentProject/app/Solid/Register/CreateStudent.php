@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Solid\Rigester;
+namespace App\Solid\Register;
 
-use App\Models\Student;
 use App\Models\User;
+use App\Models\Student;
 use Illuminate\Support\Facades\URL;
+use App\Solid\Register\StudentRegistrationResponse;
 
 
 class CreateStudent implements CreateUser
@@ -21,18 +22,10 @@ class CreateStudent implements CreateUser
             'left_for_qusat'=>$data['left_for_qusat'],
             'parent_id'=>$data['parent_id'],
             'section_id'=>$data['section_id'],
+            'address'=>$data['address'],
+            'birth_date'=>$data['birth_date'],
         ]);
+        return StudentRegistrationResponse::createResponse($user);
 
-        $response = [
-            'user'=>$user,
-            'token'=>$user['user']['token']
-        ];
-        return response()->json(
-            [
-                'message' => "registered successfully",
-                'status' => true,
-                'data' => $response
-            ]
-        ,201 );
     }
 }

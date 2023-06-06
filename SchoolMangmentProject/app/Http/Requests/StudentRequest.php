@@ -23,6 +23,7 @@ class StudentRequest extends FormRequest
     {
         return [
             'img' => 'bail|image|mimes:jpeg,png,jpg,gif',
+            'phone_number'=>'bail|required|string',
             'name' => 'bail|required|string',
             'email' => 'bail|required|string|unique:users,email',
             'password' => 'bail|required|string|min:6',
@@ -33,6 +34,8 @@ class StudentRequest extends FormRequest
             'left_for_qusat' => 'bail|required|integer',
             'parent_id' => 'bail|required|integer',
             'section_id' => 'bail|required|integer',
+            'address'=>'bail|required|string',
+            'birth_date'=>'bail|required|date'
         ];
 
     }

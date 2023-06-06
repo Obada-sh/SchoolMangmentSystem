@@ -23,6 +23,7 @@ class ParentRequest extends FormRequest
     {
         return [
             'img' => 'bail|image|mimes:jpeg,png,jpg,gif',
+            'phone_number'=>'bail|required|string',
             'name' => 'bail|required|string',
             'email' => 'bail|required|string|unique:users,email',
             'password' => 'bail|required|string|min:6',

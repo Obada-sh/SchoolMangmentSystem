@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Solid\Rigester;
+namespace App\Solid\Register;
 
 use App\Models\User;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\URL;
+use App\Solid\Register\UserRegistrationResponse;
 
 class CreateUserInfo implements CreateUser
 {
@@ -20,6 +21,7 @@ class CreateUserInfo implements CreateUser
             $input['img'] = null;
         }
         $user=User::create([
+                'phone_number'=>$input['phone_number'],
                 'img' => $input['img'],
                 'name'=>$data['name'],
                 'email'=>$data['email'],
@@ -28,10 +30,6 @@ class CreateUserInfo implements CreateUser
                 'gender'=>$data['gender'],
         ]);
         $token = $user->createToken('loginToken')->plainTextToken;
-            $response = [
-                'user'=>$user,
-                'token'=>$token
-            ];
-            return $response;
+        return UserRegistrationResponse::createResponse($user, $token);
     }
 }

@@ -10,6 +10,8 @@ class Student extends Model
     use HasFactory;
     protected $fillable = [
         'is_in_bus',
+        'address',
+        'birth_date', 
         'left_for_bus',
         'left_for_qusat',
         'user_id',

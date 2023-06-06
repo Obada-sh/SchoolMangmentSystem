@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone_number',
         'email',
         'password',
         'img',
@@ -61,7 +62,7 @@ class User extends Authenticatable
         return $this->hasOne(Teacher::class);
     }
 
-    
+
 
 
 }
