@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "9ac27c84-8d70-4762-a0b0-9d4ab825ad34",
+		"name": "SchoolMangmentSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"item": [
+				{
+					"name": "registerParent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone_number",
+									"value": "12412",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "sda",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "obada@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "asasdasd",
+									"type": "default"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "default"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registerParent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registerParent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registerStudent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "phone_number",
+									"value": "12312",
+									"type": "default"
+								},
+								{
+									"key": "name",
+									"value": "as",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "a@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "asdasdas",
+									"type": "default"
+								},
+								{
+									"key": "gender",
+									"value": "Male",
+									"type": "default"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "default"
+								},
+								{
+									"key": "is_in_bus",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "left_for_bus",
+									"value": "32",
+									"type": "default"
+								},
+								{
+									"key": "left_for_qusat",
+									"value": "32",
+									"type": "default"
+								},
+								{
+									"key": "parent_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "section_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/registerStudent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"registerStudent"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Basics",
+			"item": [
+				{
+					"name": "createClass",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grade",
+									"value": "4",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/createClass",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"createClass"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSections",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "saf_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "number",
+									"value": "4",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/createSections",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"createSections"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
