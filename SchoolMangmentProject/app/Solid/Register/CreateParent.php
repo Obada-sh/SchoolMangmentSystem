@@ -19,6 +19,6 @@ class CreateParent implements CreateUser
             'user_id'=> $user['user']['id']
         ]);
         return ParentRegistrationResponse::createResponse($user);
-            
+
     }
 }

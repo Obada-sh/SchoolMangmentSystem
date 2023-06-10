@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('birth_date');
             $table->foreignId(column:'user_id')->constrained();
             $table->foreignId(column:'parent_id')->references('user_id')->on('child_parents')->onDelete('cascade');
+            $table->foreignId(column:'saf_id')->references('saf_id')->on('sections')->onDelete('cascade');
             $table->foreignId(column:'section_id')->constrained();
             $table->timestamps();
         });

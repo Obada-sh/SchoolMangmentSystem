@@ -2,15 +2,17 @@
 
 namespace App\Solid\Register;
 
+
 class TeacherRegistrationResponse
 {
-    public static function createResponse($user)
+    public static function createResponse($data)
     {
+        // return $user;
         return response()->json(
             [
                 'message' => "registered successfully",
                 'status' => true,
-                'data' => $user
+                'data' => $data
             ],
             201
         );

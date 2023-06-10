@@ -11,7 +11,7 @@ class TeacherRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -30,7 +30,7 @@ class TeacherRequest extends FormRequest
             'role' => 'bail|required|in:Admin,Student,Teacher,Parent',
             'gender' => 'bail|required|in:Male,Female',
             'salary'=>'bail|required|integer',
-            'subject_id'=>'bail|required|integer',
+            'subjects'=>'bail|required|array'
         ];
     }
 }

@@ -12,12 +12,14 @@ class Subject extends Model
         'name',
         'saf_id'
     ];
-    public function teacher()
-    {
-        return $this->hasMany(Teacher::class);
-    }
+
     public function saf()
     {
         return $this->belongsTo(Saf::class);
+    }
+
+    public function subject_has_teachers()
+    {
+        return $this->hasMany(Teacher::class);
     }
 }

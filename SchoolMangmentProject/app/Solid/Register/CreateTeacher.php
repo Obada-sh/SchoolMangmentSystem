@@ -3,7 +3,7 @@
 namespace App\Solid\Register;
 
 use App\Models\Teacher;
-use App\Solid\Register\TeacherRegistrationResponse;
+
 
 class CreateTeacher implements CreateUser
 {
@@ -14,8 +14,9 @@ class CreateTeacher implements CreateUser
         $teacher = Teacher::create([
             'user_id'=> $user['user']['id'],
             'salary'=>$data['salary'],
-            'subject_id'=>$data['subject_id'],
         ]);
+        CreateSubjectHasTeacher::connectSubjects($data['subjects'],$teacher['user_id']);
+
         return TeacherRegistrationResponse::createResponse($data);
     }
 }

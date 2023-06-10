@@ -11,12 +11,13 @@ class Student extends Model
     protected $fillable = [
         'is_in_bus',
         'address',
-        'birth_date', 
+        'birth_date',
         'left_for_bus',
         'left_for_qusat',
         'user_id',
         'parent_id',
-        'section_id'
+        'section_id',
+        'saf_id'
     ];
 
     public function user()
