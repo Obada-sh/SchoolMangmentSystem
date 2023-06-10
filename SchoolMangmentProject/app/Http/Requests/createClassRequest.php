@@ -22,7 +22,7 @@ class createClassRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'grade' => 'required|string'
+            'grade' => 'required|string|unique:safs'
         ];
     }
 }
