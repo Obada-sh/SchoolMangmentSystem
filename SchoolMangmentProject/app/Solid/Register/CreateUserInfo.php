@@ -9,7 +9,7 @@ use App\Solid\Register\UserRegistrationResponse;
 
 class CreateUserInfo implements CreateUser
 {
-    public static  function createUser($data)
+    public static  function createUser($data,$role)
     {
         $input = $data->all();
         if($data->hasFile('img'))
@@ -26,10 +26,10 @@ class CreateUserInfo implements CreateUser
                 'name'=>$data['name'],
                 'email'=>$data['email'],
                 'password'=>bcrypt($data['password']),
-                'role'=>$data['role'],
+                'role'=>$role,
                 'gender'=>$data['gender'],
         ]);
-        $token = $user->createToken('loginToken')->plainTextToken;
-        return UserRegistrationResponse::createResponse($user, $token);
+
+        return $user;
     }
 }

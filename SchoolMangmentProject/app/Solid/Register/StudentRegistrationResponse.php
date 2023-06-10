@@ -6,13 +6,12 @@ use Illuminate\Http\JsonResponse;
 
 class StudentRegistrationResponse
 {
-    public static function createResponse($user)
+    public static function createResponse()
     {
         return response()->json(
             [
                 'message' => "registered successfully",
                 'status' => true,
-                'data' => $user
             ],
             201
         );

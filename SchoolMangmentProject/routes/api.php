@@ -38,4 +38,4 @@ Route::post('/createClass',[ClassController::class,'createClass']);
     Route::post('/createSubject',[SubjectController::class,'createSubject']);
 
 
-Route::get('/readSubjects',[SubjectController::class,'readSubject']);
+Route::get('/getClasses',[ClassController::class,'readClasses']);

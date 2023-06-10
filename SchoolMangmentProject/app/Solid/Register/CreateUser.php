@@ -5,5 +5,5 @@ namespace App\Solid\Register;
 
 interface CreateUser
 {
-    public static function createUser($request);
+    public static function createUser($request,$role);
 }

@@ -11,14 +11,14 @@ use App\Solid\Register\StudentRegistrationResponse;
 
 class CreateStudent implements CreateUser
 {
-    public static  function createUser($data)
+    public static  function createUser($data,$role)
     {
 
-        $user = CreateUserInfo::createUser($data);
+        $user = CreateUserInfo::createUser($data,$role);
         $section = DB::table('sections')->where('id','Like',$data['section_id'])->first();
 
         $student = Student::create([
-            'user_id'=> $user['user']['id'],
+            'user_id'=> $user['id'],
             'is_in_bus'=>$data['is_in_bus'],
             'left_for_bus'=>$data['left_for_bus'],
             'left_for_qusat'=>$data['left_for_qusat'],
@@ -28,7 +28,7 @@ class CreateStudent implements CreateUser
             'birth_date'=>$data['birth_date'],
             'saf_id'=>$section->saf_id
         ]);
-        return StudentRegistrationResponse::createResponse($user);
+        return StudentRegistrationResponse::createResponse();
 
     }
 }

@@ -7,16 +7,16 @@ use App\Models\Teacher;
 
 class CreateTeacher implements CreateUser
 {
-    public static  function createUser($data)
+    public static  function createUser($data,$role)
     {
-        $user = CreateUserInfo::createUser($data);
+        $user = CreateUserInfo::createUser($data,$role);
 
         $teacher = Teacher::create([
-            'user_id'=> $user['user']['id'],
+            'user_id'=> $user['id'],
             'salary'=>$data['salary'],
         ]);
         CreateSubjectHasTeacher::connectSubjects($data['subjects'],$teacher['user_id']);
 
-        return TeacherRegistrationResponse::createResponse($data);
+        return TeacherRegistrationResponse::createResponse();
     }
 }

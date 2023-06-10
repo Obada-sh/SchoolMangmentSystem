@@ -10,15 +10,15 @@ use App\Solid\Register\ParentRegistrationResponse;
 
 class CreateParent implements CreateUser
 {
-    public static  function createUser($data)
+    public static  function createUser($data,$role)
     {
 
-        $user = CreateUserInfo::createUser($data);
+        $user = CreateUserInfo::createUser($data,$role);
 
         ChildParent::create([
-            'user_id'=> $user['user']['id']
+            'user_id'=> $user['id']
         ]);
-        return ParentRegistrationResponse::createResponse($user);
+        return ParentRegistrationResponse::createResponse();
 
     }
 }

@@ -27,7 +27,6 @@ class ParentRequest extends FormRequest
             'name' => 'bail|required|string',
             'email' => 'bail|required|string|unique:users,email',
             'password' => 'bail|required|string|min:6',
-            'role' => 'bail|required|in:Admin,Student,Teacher,Parent',
             'gender' => 'bail|required|in:Male,Female',
         ];
 

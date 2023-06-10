@@ -6,7 +6,7 @@ use Illuminate\Http\JsonResponse;
 
 class ParentRegistrationResponse
 {
-    public static function createResponse($user)
+    public static function createResponse()
     {
 
 
@@ -14,7 +14,6 @@ class ParentRegistrationResponse
             [
                 'message' => "registered successfully",
                 'status' => true,
-                'data' => $user
             ],
             201
         );

@@ -18,13 +18,5 @@ class SubjectController extends Controller
 
     }
 
-    public function readSubject()
-    {
-        $subjects = readSubject::read();
-
-        return response()->json([
-            'status' => true,
-            'data' => $subjects
-        ]);
-    }
+    
 }

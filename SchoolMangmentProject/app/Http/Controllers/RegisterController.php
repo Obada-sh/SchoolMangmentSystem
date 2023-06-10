@@ -15,17 +15,17 @@ class RegisterController extends Controller
 
     public function registerParent(ParentRequest $request)
     {
-        return CreateParent::createUser($request);
+        return CreateParent::createUser($request,"Parent");
     }
 
     public function registerStudent(StudentRequest $request)
     {
-        return CreateStudent::createUser($request);
+        return CreateStudent::createUser($request,"Student");
     }
 
     public function registerTeacher(TeacherRequest $request)
     {
-        return CreateTeacher::createUser($request);
+        return CreateTeacher::createUser($request,"Teacher");
     }
 
 }
