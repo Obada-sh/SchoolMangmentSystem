@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9ac27c84-8d70-4762-a0b0-9d4ab825ad34",
+		"_postman_id": "420c142c-945e-48b0-b1db-60731287014f",
 		"name": "SchoolMangmentSystem",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -150,6 +150,50 @@
 							"path": [
 								"api",
 								"registerStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get classes for register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get sections for register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/vnd.api+json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "class_id",
+									"value": "1",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/getSectionsRegister",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getSectionsRegister"
 							]
 						}
 					},

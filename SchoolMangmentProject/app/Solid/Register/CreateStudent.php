@@ -2,12 +2,15 @@
 
 namespace App\Solid\Register;
 
+use App\Models\Section;
 use App\Models\User;
 use App\Models\Student;
+use App\Solid\Read\Get\GetClasses;
+use App\Solid\Read\Get\GetSectionsWhereClass;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
 use App\Solid\Register\StudentRegistrationResponse;
-
+use Illuminate\Cache\Repository;
 
 class CreateStudent implements CreateUser
 {
@@ -30,5 +33,47 @@ class CreateStudent implements CreateUser
         ]);
         return StudentRegistrationResponse::createResponse();
 
+    }
+
+    public static function getClasses()
+    {
+        $classes = GetClasses::get();
+        $reponse = array();
+        foreach($classes as $class){
+            $payload = [
+                'id' => $class->id,
+                'grade' => $class->grade
+            ];
+            $reponse[]=$payload;
+
+
+
+        }
+
+        return response()->json([
+            'status' => true,
+            'data' => $reponse
+        ]);
+    }
+
+
+
+    public static function getSections($classID)
+    {
+        $sections = GetSectionsWhereClass::get($classID);
+        $response = array();
+        foreach($sections as $section){
+            $payload=[
+                'id' => $section->id,
+                'number' => $section->number
+            ];
+
+            $response[] =$payload;
+        }
+
+        return response()->json([
+            'status' => true,
+            'data' => $response
+        ]);
     }
 }

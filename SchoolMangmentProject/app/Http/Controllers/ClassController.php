@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateClassRequest;
-use App\Solid\createClass\createClass;
-use App\Solid\Read\ReadClass\ReadClass;
 use Illuminate\Http\Request;
+use App\Solid\createClass\createClass;
+use App\Http\Requests\ReadClassRequest;
+use App\Solid\Read\ReadClass\ReadClass;
+use App\Http\Requests\CreateClassRequest;
 
 class ClassController extends Controller
 {
@@ -26,5 +27,14 @@ class ClassController extends Controller
             'status' => true,
             'data' => $reponse
         ]);
+    }
+
+    public function readEachClass(ReadClassRequest $request)
+    {
+
+        
+
+
+
     }
 }
